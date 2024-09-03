@@ -1,0 +1,32 @@
+{
+  "name": "member-list-input",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "author": {
+    "name": "Taku Amano",
+    "url": "https://blog.taaas.jp/"
+  },
+  "description": "Member list input plugin for Movable Type",
+  "scripts": {
+    "dev": "vite",
+    "build:app": "vite build",
+    "build:plugin": "mt-plugin-builder build",
+    "build": "npm run build:app && npm run build:plugin",
+    "test": "vitest",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "playwright:install": "playwright install"
+  },
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.48.2",
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "@testing-library/svelte": "^4.0.0",
+    "@usualoma/mt-plugin-builder": "^1.0.0",
+    "jsdom": "^24.0.0",
+    "svelte": "^5.1.13",
+    "vitest": "^1.0.0",
+    "xlsx": "https://cdn.sheetjs.com/xlsx-0.20.2/xlsx-0.20.2.tgz"
+  }
+}

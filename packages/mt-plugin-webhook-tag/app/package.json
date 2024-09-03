@@ -1,0 +1,18 @@
+{
+  "name": "app",
+  "scripts": {
+    "dev": "wrangler dev --ip 0.0.0.0",
+    "deploy": "wrangler deploy --minify"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "hono": "^4.6.10",
+    "html-minifier-terser": "^7.2.0",
+    "marked": "^12.0.0"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20241022.0",
+    "@types/html-minifier-terser": "^7.0.2",
+    "wrangler": "^3.83.0"
+  }
+}

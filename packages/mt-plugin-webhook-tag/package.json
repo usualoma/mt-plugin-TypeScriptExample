@@ -1,0 +1,17 @@
+{
+  "name": "webhook-tag",
+  "type": "module",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "mt-plugin-builder build"
+  },
+  "author": {
+    "name": "Taku Amano",
+    "url": "https://blog.taaas.jp/"
+  },
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@usualoma/mt-plugin-builder": "^1.0.0"
+  }
+}

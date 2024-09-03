@@ -1,0 +1,20 @@
+{
+  "name": "vector-cosine-similarity",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "build": "mt-plugin-builder build"
+  },
+  "author": {
+    "name": "Taku Amano",
+    "url": "https://blog.taaas.jp/"
+  },
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "@usualoma/mt-plugin-builder": "^1.0.0",
+    "hono": "^4.6.10"
+  }
+}

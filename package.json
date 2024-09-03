@@ -1,0 +1,9 @@
+{
+    "name": "mt-plugin-typescript-example",
+    "type": "module",
+    "license": "MIT",
+    "private": true,
+    "workspaces": [
+        "packages/*"
+    ]
+}

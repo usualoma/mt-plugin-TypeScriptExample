@@ -1,0 +1,23 @@
+{
+  "name": "ts-assistant",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "vite",
+    "build:app": "vite build",
+    "build:plugin": "mt-plugin-builder build",
+    "build": "npm run build:app && npm run build:plugin"
+  },
+  "author": {
+    "name": "Taku Amano",
+    "url": "https://blog.taaas.jp/"
+  },
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "@usualoma/mt-plugin-builder": "^1.0.0",
+    "svelte": "^5.1.13"
+  }
+}
