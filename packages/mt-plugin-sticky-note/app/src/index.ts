@@ -29,8 +29,8 @@ const app = new Hono<{ Bindings: Bindings }>()
         "SELECT * FROM notes WHERE screen_id = ? ORDER BY id ASC"
       )
         .bind(screenId)
-        .all();
-      return c.json(res.results as unknown as Note[]);
+        .all<Note>();
+      return c.json(res.results);
     } catch (e) {
       return c.json({ err: (e as Error).message }, 500);
     }
