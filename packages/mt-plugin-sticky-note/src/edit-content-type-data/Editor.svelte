@@ -40,12 +40,15 @@
     return jwt;
   };
 
-  const getClient = async () =>
-    hc<AppType>(API_URL, {
-      headers: {
-        Authorization: `Bearer ${await getUserToken()}`,
-      },
-    });
+  const client = hc<AppType>(API_URL, {
+    fetch: (async (input, init) =>
+      fetch(input, {
+        ...init,
+        headers: {
+          Authorization: `Bearer ${await getUserToken()}`,
+        },
+      })) as typeof fetch,
+  });
 
   let messages = $state<
     Array<{ id: number; content: string; user_id: string }>
@@ -54,7 +57,7 @@
 
   const getMessages = async () => {
     const res = await (
-      await (await getClient())[":screenId"].$get({ param: { screenId } })
+      await client[":screenId"].$get({ param: { screenId } })
     ).json();
     if ("err" in res) {
       throw new Error(res.err);
@@ -64,9 +67,7 @@
 
   const addMessage = async (content: string) => {
     const res = await (
-      await (
-        await getClient()
-      )[":screenId"].$post({
+      await client[":screenId"].$post({
         param: { screenId },
         json: {
           content,
@@ -82,9 +83,7 @@
 
   const deleteMessage = async (id: number) => {
     const res = await (
-      await (
-        await getClient()
-      )[":screenId"][":noteId"].$delete({
+      await client[":screenId"][":noteId"].$delete({
         param: { screenId, noteId: String(id) },
       })
     ).json();
